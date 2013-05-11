@@ -1720,6 +1720,22 @@ ofxTLBangs* ofxTimeline::addBangs(string trackName, string xmlFileName){
 	return newBangs;
 }
 
+//// <EDITED> ///////////////////////////////////////////
+ofxTLColorBangs* ofxTimeline::addColorBangs(string trackName, ofColor col){
+    string uniqueName = confirmedUniqueName(trackName);
+ 	return addColorBangs(uniqueName, col, nameToXMLName(uniqueName));   
+}
+
+ofxTLColorBangs* ofxTimeline::addColorBangs(string trackName,ofColor col, string xmlFileName){
+	ofxTLColorBangs* newBangs = new ofxTLColorBangs();
+	newBangs->setCreatedByTimeline(true);
+	newBangs->setColor(col);
+	newBangs->setXMLFileName(xmlFileName);
+	addTrack(confirmedUniqueName(trackName), newBangs);
+	return newBangs;
+}
+//////////////////////////////////////////////////////////////
+
 ofxTLFlags* ofxTimeline::addFlags(string trackName){
     string uniqueName = confirmedUniqueName(trackName);
     return addFlags(uniqueName, nameToXMLName(uniqueName));
