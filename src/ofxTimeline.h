@@ -62,6 +62,9 @@
 #include "ofxTLInOut.h"
 #include "ofxTLCurves.h"
 #include "ofxTLBangs.h"
+// EDITED HERE
+#include "ofxTLColorBangs.h"
+// EDITED HERE
 #include "ofxTLFlags.h"
 #include "ofxTLSwitches.h"
 #include "ofxTLColorTrack.h"
@@ -343,6 +346,11 @@ class ofxTimeline : ofThread {
 	
     ofxTLBangs* addBangs(string name);
 	ofxTLBangs* addBangs(string name, string xmlFileName);
+	
+	// <EDIT> Edited functions //
+    ofxTLColorBangs* addColorBangs(string name, ofColor col);
+	ofxTLColorBangs* addColorBangs(string name, ofColor col, string xmlFileName);
+	/////////////////////////////
     
     ofxTLFlags* addFlags(string name);
     ofxTLFlags* addFlags(string name, string xmlFileName);
